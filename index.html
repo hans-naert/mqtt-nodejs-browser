@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MQTT within browser</title>
+  </head>
+  <body>
+     <button id="button_on">SET ON</button>
+     <button id="button_off">SET OFF</button>
+    <script src="/mqtt.min.js"></script>
+
+    <script>
+      var client = mqtt.connect("ws://rpi-hn-embed.local:9001") // you add a ws:// url here  
+      var button_on = document.getElementById('button_on');
+      var button_off = document.getElementById('button_off');
+
+      button_on.addEventListener('click', event => {
+        client.publish("set_output4", "1")
+      });
+
+      button_off.addEventListener('click', event => {
+        client.publish("set_output4", "0")
+      });
+
+  
+    </script>
+  </body>
+</html>
