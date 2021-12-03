@@ -43,5 +43,5 @@ app.get('/mqtt.min.js', (req, res) => {
   });
 
 http.listen(port, () => {
-  console.log(`Socket.IO server running at http://localhost:${port}/`);
+  console.log(`WEB server running at http://localhost:${port}/`);
 });
